@@ -1,3 +1,7 @@
+//-------------------------------------
+// Task №1
+//-------------------------------------
+
 filter_list = function(array){
 	arr = []
 	for (var i = 0; i <= array.length; i++) {
@@ -18,7 +22,8 @@ console.log(filter_list([1,'a','b',0,15]))
 console.log(filter_list([1,2,'aasf','1','123',123]))
 
 //-------------------------------------
-
+// Task №2
+//-------------------------------------
 
 function first_non_repeating_letter(string) {
 	string_original=string;
@@ -37,7 +42,8 @@ console.log(first_non_repeating_letter(someString))
 
 
 //-------------------------------------
-
+// Task №3
+//-------------------------------------
 function digital_root(number) {
    let sum = number
    let arr = []
@@ -60,7 +66,8 @@ digital_root(942)
 digital_root(132189)
 digital_root(493193)
 
-
+//-------------------------------------
+// Task №4
 //-------------------------------------
 
 function target_sum_of_two(arr, target){
@@ -80,6 +87,7 @@ console.log(target_sum_of_two([1, 3, 6, 2, 2, 0, 4, 5], 5));
 
 
 //-------------------------------------
+// Task №5
 //-------------------------------------
 function requested_pairs(s){
 	s = s.toUpperCase()
@@ -122,13 +130,14 @@ console.log(requested_pairs(s))
 
 
 //-------------------------------------
+//Extra Task №1
+//-------------------------------------
 
 
-
-function nextBigger(n){
+function finding_next_bigger(n){
   var d = n.toString().split('');
 
-  // find the pivot, the point (from right) where i > i-1
+  
   var p = -1;
   for (var i = d.length-1; i > 0; i--) {
     if (+d[i] > +d[i-1]) {
@@ -137,16 +146,15 @@ function nextBigger(n){
     }
   }
 
-  // if we are unable to find the pivot, skip
+
   if (p == -1) return p;
 
-  // splice the digits in the pivot
   var right = d.splice(p);
 
-  // extract pivot
+
   var pv = right.splice(0, 1)[0];
 
-  // find the lowest number > pv
+
   var mm = null, mmi = null;
   for (var i = 0; i < right.length; i++) {
     if (right[i] > pv) {
@@ -163,7 +171,7 @@ function nextBigger(n){
   right.push(pv);
   right = right.sort();
 
-  // concat the left + new pivot + right part
+
   var ret = +d.concat([mm]).concat(right).join('');
   if (ret < n) return -1;
 
@@ -171,13 +179,14 @@ function nextBigger(n){
 }
 
 
-console.log(nextBigger(12))
-console.log(nextBigger(513))
-console.log(nextBigger(2017))
-console.log(nextBigger(9))
-console.log(nextBigger(111))
+console.log(finding_next_bigger(12))
+console.log(finding_next_bigger(513))
+console.log(finding_next_bigger(2017))
+console.log(finding_next_bigger(9))
+console.log(finding_next_bigger(111))
 
 //-------------------------------------
+//Extra Task №2
 //-------------------------------------
 function int2ip (ipInt) {
     return ( (ipInt>>>24) +'.' + (ipInt>>16 & 255) +'.' + (ipInt>>8 & 255) +'.' + (ipInt & 255) );
